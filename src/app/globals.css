@@ -3,25 +3,110 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --Text: hsl(200, 15%, 8%);
+    --Input: hsl(0, 0%, 52%);
+    --Background: hsl(0, 0%, 98%);
+    --Elements: hsl(0, 0%, 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[class='dark'] {
+    --Elements: hsl(209, 23%, 22%);
+    --Background: hsl(207, 26%, 17%);
+    --Text: hsl(0, 0%, 100%);
+
+    }
+
+
+.box {
+    width:100%;
+    height:auto;
+}
+.navbar {
+    background-color: var(--Elements);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: var(--Background);
 }
+
+img {
+    transition: .3s ease all;
+    -webkit-transition: .3s ease all;
+    -moz-transition: .3s ease all;
+    -ms-transition: .3s ease all;
+    -o-transition: .3s ease all;
+}
+
+
+h1 {
+    color: var(--Text);
+}
+
+.country {
+    background-color: var(--Elements);
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: var(--Elements);
+    color: var(--Text);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: var(--Background);
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+  /* input bar */
+
+  input {
+    background-color: var(--Elements);
+    width:150%;
+  }
+
+  
+
+  /* backbutton */
+  .backbutton {
+    background-color: var(--Elements);
+    color: var(--Text);
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }

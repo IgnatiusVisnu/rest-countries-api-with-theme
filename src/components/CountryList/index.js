@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Page = ({ api }) => {
     return (
-        <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-12 min-h-screen px-8 mx-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-12 min-h-screen px-8 mx-5">
         {api.map((data) => {
             return (
                 <div key={data.name.common} className="country rounded-lg shadow-xl">

@@ -1,5 +1,5 @@
 "use client"
-
+import {useEffect} from 'react';
 import { CaretDown } from "@phosphor-icons/react"
 
 const FilterButton = () => {
@@ -7,23 +7,22 @@ const FilterButton = () => {
     document.getElementById("myDropdown").classList.toggle("show");
   }
   
-  if (typeof window !== "undefined") {
-    // Client-side-only code
-  }
-  
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+  // Close the dropdown menu if the user clicks outside of it (wajib pake useEffect biar ga error undefined window nya)
+  useEffect(() => {
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
         }
       }
     }
-  }
+  }, []);
+  
   return (
     <div className="dropdown shadow-xl">
     <button onClick={myFunction} className="dropbtn flex justify-between items-center gap-10">
